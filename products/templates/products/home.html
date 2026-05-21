@@ -1,0 +1,452 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-slider">
+
+    <!-- Slide 1 -->
+
+    <div class="slide active">
+
+        <img src="{% static 'products\images\hero1.png' %}">
+
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+
+            <h1>Celebrate Every Moment In Elegance</h1>
+
+            <p>
+                Discover luxurious saree collections crafted for weddings,
+                celebrations and timeless fashion.
+            </p>
+
+            <button>Explore Collection</button>
+
+        </div>
+
+    </div>
+
+    <!-- Slide 2 -->
+
+    <div class="slide">
+
+        <img src="{% static 'products\images\hero2.png' %}" >
+
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+
+            <h1>Luxury Silk Sarees For Weddings</h1>
+
+            <p>
+                Handpicked premium collections with elegant craftsmanship.
+            </p>
+
+            <button>View Wedding Styles</button>
+
+        </div>
+
+    </div>
+
+    <!-- Slide 3 -->
+
+    <div class="slide">
+
+        <img src="{% static 'products\images\hero3.png' %}" >
+
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+
+            <h1>Premium Designer Collections</h1>
+
+            <p>
+                Modern elegance blended with traditional heritage.
+            </p>
+
+            <button>Shop New Arrivals</button>
+
+        </div>
+
+    </div>
+
+    <!-- Slide 4 -->
+
+    <div class="slide">
+
+        <img src="{% static 'products/images/hero4.png' %}">
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+
+            <h1>Tradition Woven With Grace</h1>
+
+            <p>
+                Elegant pastel collections for festive celebrations.
+            </p>
+
+            <button>Discover More</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="new-launch-section">
+
+    <div class="section-header">
+
+        <h2>New Launches</h2>
+
+        <p>Explore our latest saree collections crafted for elegance.</p>
+
+    </div>
+
+    <div class="launch-wrapper">
+
+        <!-- Card 1 -->
+        <div class="launch-card">
+
+            <div class="launch-image">
+
+                <img src="{% static 'products\images\card1.jpg.jpg' %}" alt="Wedding Saree">
+
+            </div>
+
+            <div class="launch-content">
+
+                <h3>Wedding Sarees</h3>
+
+                <a href="#">Explore</a>
+
+            </div>
+
+        </div>
+
+        <!-- Card 2 -->
+        <div class="launch-card">
+
+            <div class="launch-image">
+
+                <img src="{% static 'products/images/card2.jpg.jpg' %}" alt="Silk Sarees">
+
+            </div>
+
+            <div class="launch-content">
+
+                <h3>Pure Silk</h3>
+
+                <a href="#">Explore</a>
+
+            </div>
+
+        </div>
+
+        <!-- Card 3 -->
+        <div class="launch-card">
+
+            <div class="launch-image">
+
+                <img src="{% static 'products/images/card3.jpg.jpg' %}" alt="Party Wear">
+
+            </div>
+
+            <div class="launch-content">
+
+                <h3>Party Wear</h3>
+
+                <a href="#">Explore</a>
+
+            </div>
+
+        </div>
+
+        <!-- Card 4 -->
+        <div class="launch-card">
+
+            <div class="launch-image">
+
+                <img src="{% static 'products/images/card4.jpg.jpg' %}" alt="Banarasi">
+
+            </div>
+
+            <div class="launch-content">
+
+                <h3>Banarasi</h3>
+
+                <a href="#">Explore</a>
+
+            </div>
+
+        </div>
+<!-- Card 5 -->
+
+<div class="launch-card">
+
+    <div class="launch-image">
+
+        <img src="{% static 'products\images\card5.jpg' %}" alt="Designer Sarees">
+
+    </div>
+
+    <div class="launch-content">
+
+        <h3>Designer Wear</h3>
+
+        <a href="#">Explore</a>
+
+    </div>
+
+</div>
+
+
+<!-- Card 6 -->
+
+<div class="launch-card alt-style">
+
+    <div class="launch-image">
+
+        <img src="{% static '\products\images\card6.jpg' %}" alt="Soft Silk">
+
+    </div>
+
+    <div class="launch-content">
+
+        <h3>Soft Silk</h3>
+
+        <a href="#">Explore</a>
+
+    </div>
+
+</div>
+
+
+<!-- Card 7 -->
+
+<div class="launch-card">
+
+    <div class="launch-image">
+
+        <img src="{% static 'products\images\card7.jpg' %}" alt="Festive Collection">
+
+    </div>
+
+    <div class="launch-content">
+
+        <h3>Festive Edit</h3>
+
+        <a href="#">Explore</a>
+
+    </div>
+
+ </div>
+    </div>
+
+</section>
+<section class="luxury-banner">
+
+    <img src="{% static 'products\images\brand model.png' %}" alt="">
+
+    <div class="luxury-overlay">
+
+        <span>BEST SELLERS  2026</span>
+
+        <h1>
+            Luxury Sarees <br>
+            up to 30% off
+        </h1>
+
+        <p>
+            Discover handcrafted silk sarees designed for weddings,
+            celebrations and elegant occasions.
+        </p>
+
+        <a href="#">
+            Explore Collection
+        </a>
+
+    </div>
+
+</section>
+<section class="category-section">
+
+    <div class="section-header">
+
+    <h2>EXPLORE COLLECTIONS</h2>
+
+    <p class="section-subtitle">
+        Discover timeless saree collections crafted for every occasion.
+    </p>
+
+    <a href="{% url 'collections' %}">
+        VIEW ALL
+    </a>
+
+</div>
+
+    <div class="category-slider">
+
+        <!-- CARD -->
+
+        <a href="{% url 'collections' %}" class="category-card">
+
+            <div class="category-image">
+
+                <img src="{% static 'products/images/silk.jpg' %}" alt="">
+
+            </div>
+
+            <div class="category-content">
+
+                <h3>Silk Sarees</h3>
+
+                <p>Elegant traditional silk collections</p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </div>
+
+        </a>
+
+        <!-- CARD -->
+
+        <a href="{% url 'collections' %}" class="category-card">
+
+            <div class="category-image">
+
+                <img src="{% static 'products/images/wedding.jpg' %}" alt="">
+
+            </div>
+
+            <div class="category-content">
+
+                <h3>Wedding Sarees</h3>
+
+                <p>Luxury bridal collections</p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </div>
+
+        </a>
+
+        <!-- CARD -->
+
+        <a href="{% url 'collections' %}" class="category-card">
+
+            <div class="category-image">
+
+                <img src="{% static 'products/images/half.jpg' %}" alt="">
+
+            </div>
+
+            <div class="category-content">
+
+                <h3>Half Sarees</h3>
+
+                <p>Trendy youthful ethnic styles</p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </div>
+
+        </a>
+
+        <!-- CARD -->
+
+        <a href="{% url 'collections' %}" class="category-card">
+
+            <div class="category-image">
+
+                <img src="{% static 'products/images/haldi.jpg' %}" alt="">
+
+            </div>
+
+            <div class="category-content">
+
+                <h3>Haldi Collection</h3>
+
+                <p>Bright festive yellow collections</p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </div>
+
+        </a>
+
+        <!-- CARD -->
+
+        <a href="{% url 'collections' %}" class="category-card">
+
+            <div class="category-image">
+
+                <img src="{% static 'products/images/reception.jpg' %}" alt="">
+
+            </div>
+
+            <div class="category-content">
+
+                <h3>Reception Sarees</h3>
+
+                <p>Premium glamorous drapes</p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+<script>
+
+let slides = document.querySelectorAll(".slide");
+
+let index = 0;
+
+function showSlides(){
+
+    slides.forEach((slide)=>{
+        slide.classList.remove("active");
+    });
+
+    index++;
+
+    if(index >= slides.length){
+        index = 0;
+    }
+
+    slides[index].classList.add("active");
+}
+
+setInterval(showSlides,4000);
+
+</script>
+
+<script>
+
+window.addEventListener("scroll",function(){
+
+    const navbar = document.querySelector(".navbar");
+
+    navbar.classList.toggle("scrolled",window.scrollY > 50);
+
+});
+
+</script>
+
+{% endblock %}

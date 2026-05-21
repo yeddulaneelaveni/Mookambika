@@ -1,0 +1,685 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mookambika Collections</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Poppins,sans-serif;
+        }
+
+        body{
+            background:#f8f3f4;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .collection-navbar{
+
+            width:94%;
+            height:92px;
+
+            position:fixed;
+            top:18px;
+            left:50%;
+            transform:translateX(-50%);
+
+            background:linear-gradient(90deg,#7d5363,#6d2437);
+
+            border-radius:28px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            padding:0 40px;
+
+            z-index:9999;
+
+            box-shadow:0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        /* LOGO */
+
+        .nav-left{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .nav-left img{
+            width:64px;
+            height:64px;
+            border-radius:50%;
+            object-fit:cover;
+            background:white;
+        }
+
+        .nav-left h2{
+            color:#f2d7a0;
+            font-size:32px;
+            font-weight:700;
+        }
+
+        /* LINKS */
+
+        .nav-links{
+            display:flex;
+            align-items:center;
+            gap:42px;
+            list-style:none;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:white;
+            font-size:17px;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#f2d7a0;
+        }
+
+        /* ICONS */
+
+        .nav-icons{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .icon-box{
+
+            width:52px;
+            height:52px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,0.12);
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            color:white;
+            font-size:20px;
+
+            position:relative;
+        }
+
+        .count{
+
+            position:absolute;
+            top:-4px;
+            right:-4px;
+
+            width:22px;
+            height:22px;
+
+            border-radius:50%;
+
+            background:white;
+            color:#7d5363;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:11px;
+            font-weight:700;
+        }
+
+        /* ================= PAGE ================= */
+
+        .collections-page{
+            padding-top:150px;
+            width:92%;
+            margin:auto;
+        }
+
+        .title{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .title h1{
+            font-size:78px;
+            color:#8a6070;
+            line-height:1;
+            font-weight:800;
+        }
+
+        .title p{
+            margin-top:20px;
+            font-size:22px;
+            color:#666;
+        }
+
+        /* FILTER */
+
+        .filter-row{
+            margin-top:60px;
+
+            display:flex;
+            justify-content:center;
+            gap:18px;
+            flex-wrap:wrap;
+        }
+
+        .filter-btn{
+
+            padding:18px 42px;
+
+            border:1px solid #ddd;
+            border-radius:50px;
+
+            background:white;
+
+            font-size:18px;
+            font-weight:600;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .active-btn{
+            background:#91687a;
+            color:white;
+            border:none;
+        }
+
+        /* PRODUCTS */
+
+        .products-grid{
+
+            margin-top:55px;
+
+            display:grid;
+            grid-template-columns:repeat(5,1fr);
+            gap:28px;
+        }
+
+        .product-card{
+
+            background:white;
+
+            border-radius:24px;
+
+            overflow:hidden;
+
+            position:relative;
+
+            box-shadow:0 5px 18px rgba(0,0,0,0.05);
+
+            transition:0.3s;
+        }
+
+        .product-card:hover{
+            transform:translateY(-6px);
+        }
+
+        .product-card img{
+            width:100%;
+            height:360px;
+            object-fit:cover;
+        }
+
+        .wishlist{
+
+            position:absolute;
+            top:16px;
+            right:16px;
+
+            width:42px;
+            height:42px;
+
+            border-radius:50%;
+            background:white;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:18px;
+        }
+
+        .product-info{
+            padding:22px;
+        }
+
+        .tag{
+
+            display:inline-block;
+
+            background:#f2e8ec;
+            color:#8a6070;
+
+            padding:8px 16px;
+
+            border-radius:30px;
+
+            font-size:14px;
+            font-weight:600;
+        }
+
+        .product-info h3{
+
+            margin-top:16px;
+
+            font-size:24px;
+            line-height:1.3;
+
+            color:#222;
+        }
+
+        .product-info p{
+
+            margin-top:14px;
+
+            font-size:17px;
+            color:#666;
+
+            line-height:1.6;
+        }
+
+        .price-row{
+
+            margin-top:20px;
+
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .new-price{
+
+            font-size:22px;
+            font-weight:800;
+
+            color:#8a6070;
+        }
+
+        .old-price{
+
+            color:#aaa;
+            text-decoration:line-through;
+            font-size:18px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1400px){
+
+            .products-grid{
+                grid-template-columns:repeat(4,1fr);
+            }
+        }
+
+        @media(max-width:1100px){
+
+            .nav-links{
+                display:none;
+            }
+
+            .products-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .title h1{
+                font-size:58px;
+            }
+        }
+
+        @media(max-width:700px){
+
+            .products-grid{
+                grid-template-columns:1fr;
+            }
+
+            .title h1{
+                font-size:42px;
+            }
+
+            .filter-btn{
+                padding:14px 28px;
+                font-size:16px;
+            }
+
+            .nav-left h2{
+                font-size:24px;
+            }
+
+            .collection-navbar{
+                padding:0 18px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="collection-navbar">
+
+        <div class="nav-left">
+
+            <img src="{% static 'products/images/logo.png' %}" alt="logo">
+
+            <h2>Mookambika</h2>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/collections/">Collections</a></li>
+
+            <li><a href="#">Wedding</a></li>
+
+            <li><a href="#">Silk Sarees</a></li>
+
+            <li><a href="#">New Arrivals</a></li>
+
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+        <div class="nav-icons">
+
+            <div class="icon-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="icon-box">
+
+                <i class="fa-regular fa-heart"></i>
+
+                <div class="count">2</div>
+
+            </div>
+
+            <div class="icon-box">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <div class="count">3</div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- PAGE -->
+
+    <section class="collections-page">
+
+        <div class="title">
+
+            <h1>Saree Collections</h1>
+
+            <p>
+                Discover timeless sarees crafted for every celebration.
+            </p>
+
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="filter-row">
+
+            <button class="filter-btn active-btn">All</button>
+
+            <button class="filter-btn">Silk ▼</button>
+
+            <button class="filter-btn">Wedding ▼</button>
+
+            <button class="filter-btn">Haldi</button>
+
+            <button class="filter-btn">Reception</button>
+
+        </div>
+
+        <div class="filter-row">
+
+            <button class="filter-btn">₹400 - ₹800</button>
+
+            <button class="filter-btn">₹900 - ₹1200</button>
+
+            <button class="filter-btn">₹1400 - ₹2000</button>
+
+            <button class="filter-btn">₹2500+</button>
+
+        </div>
+
+        <!-- PRODUCTS -->
+
+        <div class="products-grid">
+
+            <!-- CARD -->
+
+            <div class="product-card">
+
+                <div class="wishlist">
+                    ♡
+                </div>
+
+                <img src="{% static 'products/images/card1.jpg' %}">
+
+                <div class="product-info">
+
+                    <span class="tag">
+                        Tissue Silk
+                    </span>
+
+                    <h3>
+                        Royal Pink Silk
+                    </h3>
+
+                    <p>
+                        Elegant traditional tissue silk saree.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="new-price">
+                            ₹799
+                        </span>
+
+                        <span class="old-price">
+                            ₹1299
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="product-card">
+
+                <div class="wishlist">
+                    ♡
+                </div>
+
+                <img src="{% static 'products/images/card2.jpg' %}">
+
+                <div class="product-info">
+
+                    <span class="tag">
+                        Bridal Wear
+                    </span>
+
+                    <h3>
+                        Wedding Banarasi
+                    </h3>
+
+                    <p>
+                        Luxury wedding banarasi collection.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="new-price">
+                            ₹1199
+                        </span>
+
+                        <span class="old-price">
+                            ₹1999
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="product-card">
+
+                <div class="wishlist">
+                    ♡
+                </div>
+
+                <img src="{% static 'products/images/haldi.jpg' %}">
+
+                <div class="product-info">
+
+                    <span class="tag">
+                        Haldi
+                    </span>
+
+                    <h3>
+                        Yellow Haldi Saree
+                    </h3>
+
+                    <p>
+                        Bright festive yellow collection.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="new-price">
+                            ₹699
+                        </span>
+
+                        <span class="old-price">
+                            ₹1099
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="product-card">
+
+                <div class="wishlist">
+                    ♡
+                </div>
+
+                <img src="{% static 'products/images/reception.jpg' %}">
+
+                <div class="product-info">
+
+                    <span class="tag">
+                        Reception
+                    </span>
+
+                    <h3>
+                        Reception Designer
+                    </h3>
+
+                    <p>
+                        Elegant designer reception sarees.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="new-price">
+                            ₹1899
+                        </span>
+
+                        <span class="old-price">
+                            ₹2999
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="product-card">
+
+                <div class="wishlist">
+                    ♡
+                </div>
+
+                <img src="{% static 'products/images/silk.jpg' %}">
+
+                <div class="product-info">
+
+                    <span class="tag">
+                        Kanjeevaram
+                    </span>
+
+                    <h3>
+                        Premium Silk Saree
+                    </h3>
+
+                    <p>
+                        Rich kanjeevaram bridal collection.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="new-price">
+                            ₹2999
+                        </span>
+
+                        <span class="old-price">
+                            ₹4599
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,772 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/collectionnav.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+
+<section class="collections-main">
+
+    <!-- HEADER -->
+
+    <div class="collections-header">
+
+        <h1>
+            Saree Collections
+        </h1>
+
+        <p class="collection-subtitle">
+            Discover timeless sarees crafted for every celebration.
+        </p>
+
+    </div>
+
+    <!-- FILTER BAR -->
+
+    <div class="top-filter-bar">
+
+        <button class="filter-btn active-btn"
+                onclick="showProducts('all', this)">
+            All
+        </button>
+
+        <button class="filter-btn"
+                onclick="toggleSubFilter('silkSub')">
+            Silk ▼
+        </button>
+
+        <button class="filter-btn"
+                onclick="toggleSubFilter('weddingSub')">
+            Wedding ▼
+        </button>
+
+        <button class="filter-btn"
+                onclick="showProducts('haldi', this)">
+            Haldi
+        </button>
+
+        <button class="filter-btn"
+                onclick="showProducts('reception', this)">
+            Reception
+        </button>
+
+    </div>
+
+    <!-- SILK SUB FILTER -->
+
+    <div class="sub-filter-box" id="silkSub">
+
+        <button onclick="showProducts('tissue', this)">
+            Tissue Silk
+        </button>
+
+        <button onclick="showProducts('banarasi', this)">
+            Banarasi Silk
+        </button>
+
+        <button onclick="showProducts('kanjeevaram', this)">
+            Kanjeevaram
+        </button>
+
+        <button onclick="showProducts('softsilk', this)">
+            Soft Silk
+        </button>
+
+    </div>
+
+    <!-- WEDDING SUB FILTER -->
+
+    <div class="sub-filter-box" id="weddingSub">
+
+        <button onclick="showProducts('bridal', this)">
+            Bridal
+        </button>
+
+        <button onclick="showProducts('engagement', this)">
+            Engagement
+        </button>
+
+        <button onclick="showProducts('partywear', this)">
+            Party Wear
+        </button>
+
+    </div>
+
+    <!-- PRICE FILTER -->
+
+    <div class="price-filter-box">
+
+        <button onclick="showProducts('price1', this)">
+            ₹400 - ₹800
+        </button>
+
+        <button onclick="showProducts('price2', this)">
+            ₹900 - ₹1200
+        </button>
+
+        <button onclick="showProducts('price3', this)">
+            ₹1400 - ₹2000
+        </button>
+
+        <button onclick="showProducts('price4', this)">
+            ₹2500+
+        </button>
+
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <div class="products-grid">
+
+    <!-- ==================== TISSUE SILK (4) ==================== -->
+
+    <div class="product-card tissue price1">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic1.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Tissue Silk</span>
+            <h3>Royal Pink Tissue</h3>
+            <p>Elegant traditional tissue silk saree with golden zari border.</p>
+            <div class="price-row">
+                <span class="new-price">₹799</span>
+                <span class="old-price">₹1299</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card tissue price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic2.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Tissue Silk</span>
+            <h3>Golden Tissue Saree</h3>
+            <p>Lustrous gold tissue silk with intricate woven motifs.</p>
+            <div class="price-row">
+                <span class="new-price">₹999</span>
+                <span class="old-price">₹1599</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card tissue price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic3.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Tissue Silk</span>
+            <h3>Ivory Pearl Tissue</h3>
+            <p>Soft ivory tissue silk perfect for festive occasions.</p>
+            <div class="price-row">
+                <span class="new-price">₹1099</span>
+                <span class="old-price">₹1799</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card tissue price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic4.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Tissue Silk</span>
+            <h3>Blush Rose Tissue</h3>
+            <p>Delicate blush tissue silk with embroidered pallu.</p>
+            <div class="price-row">
+                <span class="new-price">₹1599</span>
+                <span class="old-price">₹2499</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== BANARASI SILK (4) ==================== -->
+
+    <div class="product-card banarasi price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic5.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Banarasi Silk</span>
+            <h3>Classic Red Banarasi</h3>
+            <p>Traditional deep red banarasi with gold zari work.</p>
+            <div class="price-row">
+                <span class="new-price">₹1199</span>
+                <span class="old-price">₹1999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card banarasi price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic6.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Banarasi Silk</span>
+            <h3>Royal Blue Banarasi</h3>
+            <p>Rich royal blue with silver brocade and floral motifs.</p>
+            <div class="price-row">
+                <span class="new-price">₹1699</span>
+                <span class="old-price">₹2799</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card banarasi price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic7.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Banarasi Silk</span>
+            <h3>Emerald Green Brocade</h3>
+            <p>Vibrant emerald banarasi with traditional butis pattern.</p>
+            <div class="price-row">
+                <span class="new-price">₹1899</span>
+                <span class="old-price">₹2999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card banarasi price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic8.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Banarasi Silk</span>
+            <h3>Magenta Banarasi</h3>
+            <p>Stunning magenta with heavy golden zari weave.</p>
+            <div class="price-row">
+                <span class="new-price">₹2799</span>
+                <span class="old-price">₹4299</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== KANJEEVARAM (4) ==================== -->
+
+    <div class="product-card kanjeevaram price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic9.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Kanjeevaram</span>
+            <h3>Premium Silk Saree</h3>
+            <p>Rich kanjeevaram with contrast border and temple design.</p>
+            <div class="price-row">
+                <span class="new-price">₹1999</span>
+                <span class="old-price">₹3299</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card kanjeevaram price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic10.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Kanjeevaram</span>
+            <h3>Bridal Kanjee Gold</h3>
+            <p>Heavy gold zari kanjeevaram for grand bridal occasions.</p>
+            <div class="price-row">
+                <span class="new-price">₹2999</span>
+                <span class="old-price">₹4599</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card kanjeevaram price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic11.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Kanjeevaram</span>
+            <h3>Purple Kanjee Classic</h3>
+            <p>Deep violet kanjeevaram with peacock motif pallu.</p>
+            <div class="price-row">
+                <span class="new-price">₹3499</span>
+                <span class="old-price">₹5499</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card kanjeevaram price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic12.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Kanjeevaram</span>
+            <h3>Crimson Kanjee Luxury</h3>
+            <p>Signature crimson kanjeevaram with pure gold thread weave.</p>
+            <div class="price-row">
+                <span class="new-price">₹3999</span>
+                <span class="old-price">₹5999</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SOFT SILK (4) ==================== -->
+
+    <div class="product-card softsilk price1">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic13.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Soft Silk</span>
+            <h3>Pastel Soft Silk</h3>
+            <p>Light pastel soft silk, comfortable for daily wear.</p>
+            <div class="price-row">
+                <span class="new-price">₹699</span>
+                <span class="old-price">₹1099</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card softsilk price1">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic14.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Soft Silk</span>
+            <h3>Peach Floral Silk</h3>
+            <p>Breezy peach soft silk with printed floral design.</p>
+            <div class="price-row">
+                <span class="new-price">₹799</span>
+                <span class="old-price">₹1299</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card softsilk price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic15.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Soft Silk</span>
+            <h3>Lavender Soft Drape</h3>
+            <p>Lightweight lavender silk with embroidered border.</p>
+            <div class="price-row">
+                <span class="new-price">₹999</span>
+                <span class="old-price">₹1599</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card softsilk price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic14.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Soft Silk</span>
+            <h3>Mint Green Silk</h3>
+            <p>Fresh mint soft silk ideal for engagement ceremonies.</p>
+            <div class="price-row">
+                <span class="new-price">₹1099</span>
+                <span class="old-price">₹1799</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== BRIDAL (4) ==================== -->
+
+    <div class="product-card bridal price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic15.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Bridal</span>
+            <h3>Wedding Banarasi</h3>
+            <p>Luxury wedding banarasi with heavy zari embroidery.</p>
+            <div class="price-row">
+                <span class="new-price">₹3499</span>
+                <span class="old-price">₹5499</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card bridal price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic16.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Bridal</span>
+            <h3>Scarlet Bridal Silk</h3>
+            <p>Classic scarlet bridal kanjeevaram with real gold zari.</p>
+            <div class="price-row">
+                <span class="new-price">₹4299</span>
+                <span class="old-price">₹6499</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card bridal price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic17.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Bridal</span>
+            <h3>Ivory Bridal Drape</h3>
+            <p>Off-white bridal saree with delicate stonework border.</p>
+            <div class="price-row">
+                <span class="new-price">₹3999</span>
+                <span class="old-price">₹5999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card bridal price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic18.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Bridal</span>
+            <h3>Ruby Grand Bridal</h3>
+            <p>Deep ruby with antique gold work, perfect for the big day.</p>
+            <div class="price-row">
+                <span class="new-price">₹4999</span>
+                <span class="old-price">₹7499</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== ENGAGEMENT (4) ==================== -->
+
+    <div class="product-card engagement price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic19.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Engagement</span>
+            <h3>Blush Engagement Silk</h3>
+            <p>Soft blush pink saree with pearl embellishments.</p>
+            <div class="price-row">
+                <span class="new-price">₹1799</span>
+                <span class="old-price">₹2799</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card engagement price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic20.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Engagement</span>
+            <h3>Rose Gold Organza</h3>
+            <p>Dreamy rose gold organza with sequin border detail.</p>
+            <div class="price-row">
+                <span class="new-price">₹1999</span>
+                <span class="old-price">₹2999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card engagement price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic21.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Engagement</span>
+            <h3>Champagne Silk</h3>
+            <p>Elegant champagne silk with hand-embroidered motifs.</p>
+            <div class="price-row">
+                <span class="new-price">₹2499</span>
+                <span class="old-price">₹3899</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card engagement price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic22.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Engagement</span>
+            <h3>Lilac Engagement Drape</h3>
+            <p>Graceful lilac silk with floral zari border and pallu.</p>
+            <div class="price-row">
+                <span class="new-price">₹2799</span>
+                <span class="old-price">₹4299</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PARTY WEAR (4) ==================== -->
+
+    <div class="product-card partywear price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic23.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Party Wear</span>
+            <h3>Teal Sequin Saree</h3>
+            <p>Glamorous teal with full sequin work for parties.</p>
+            <div class="price-row">
+                <span class="new-price">₹1099</span>
+                <span class="old-price">₹1699</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card partywear price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic14.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Party Wear</span>
+            <h3>Midnight Blue Georgette</h3>
+            <p>Flowy midnight blue georgette with mirror work border.</p>
+            <div class="price-row">
+                <span class="new-price">₹1199</span>
+                <span class="old-price">₹1899</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card partywear price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic23.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Party Wear</span>
+            <h3>Fuchsia Party Drape</h3>
+            <p>Bold fuchsia with embellished border for evening events.</p>
+            <div class="price-row">
+                <span class="new-price">₹1699</span>
+                <span class="old-price">₹2699</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card partywear price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic25.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Party Wear</span>
+            <h3>Silver Shimmer Silk</h3>
+            <p>Dazzling silver shimmer saree for grand celebrations.</p>
+            <div class="price-row">
+                <span class="new-price">₹1899</span>
+                <span class="old-price">₹2999</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HALDI (4) ==================== -->
+
+    <div class="product-card haldi price1">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic26 .jpg' %}">
+        <div class="product-info">
+            <span class="tag">Haldi</span>
+            <h3>Sunshine Yellow Saree</h3>
+            <p>Bright sunshine yellow cotton saree for haldi ceremony.</p>
+            <div class="price-row">
+                <span class="new-price">₹499</span>
+                <span class="old-price">₹799</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card haldi price1">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic27.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Haldi</span>
+            <h3>Marigold Silk</h3>
+            <p>Vibrant marigold silk with printed floral border.</p>
+            <div class="price-row">
+                <span class="new-price">₹699</span>
+                <span class="old-price">₹1099</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card haldi price1">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic28.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Haldi</span>
+            <h3>Turmeric Chanderi</h3>
+            <p>Lightweight turmeric chanderi perfect for the outdoors.</p>
+            <div class="price-row">
+                <span class="new-price">₹599</span>
+                <span class="old-price">₹999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card haldi price2">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic29.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Haldi</span>
+            <h3>Golden Yellow Tissue</h3>
+            <p>Festive golden-yellow tissue silk for haldi & mehendi.</p>
+            <div class="price-row">
+                <span class="new-price">₹899</span>
+                <span class="old-price">₹1399</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== RECEPTION (4) ==================== -->
+
+    <div class="product-card reception price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic30.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Reception</span>
+            <h3>Reception Designer</h3>
+            <p>Elegant designer reception saree with stonework border.</p>
+            <div class="price-row">
+                <span class="new-price">₹1899</span>
+                <span class="old-price">₹2999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card reception price3">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic31.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Reception</span>
+            <h3>Wine Net Saree</h3>
+            <p>Rich wine net saree with pearl and bead embellishments.</p>
+            <div class="price-row">
+                <span class="new-price">₹1999</span>
+                <span class="old-price">₹3199</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card reception price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic32.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Reception</span>
+            <h3>Emerald Evening Gown</h3>
+            <p>Stunning emerald georgette with heavy embroidered pallu.</p>
+            <div class="price-row">
+                <span class="new-price">₹2599</span>
+                <span class="old-price">₹3999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card reception price4">
+        <div class="wishlist">♡</div>
+        <img src="{% static 'products\images\pic33.jpg' %}">
+        <div class="product-info">
+            <span class="tag">Reception</span>
+            <h3>Copper Shimmer Drape</h3>
+            <p>Bold copper shimmer saree for a show-stopping reception look.</p>
+            <div class="price-row">
+                <span class="new-price">₹2999</span>
+                <span class="old-price">₹4599</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =====================
+     PAGE-SPECIFIC STYLES
+===================== -->
+
+<style>
+
+/* Fix navbar visibility on this page (no hero image behind it) */
+
+.navbar{
+    background: rgba(70, 20, 30, 0.88) !important;
+    backdrop-filter: blur(16px) !important;
+    border-radius: 22px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.18) !important;
+}
+
+/* Push content below fixed navbar */
+
+.collections-main{
+    padding-top: 120px;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px){
+
+    .collections-main{
+        padding: 100px 18px 30px;
+    }
+
+    .collections-header h1{
+        font-size: 40px;
+    }
+
+    .products-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .product-card img{
+        height: 220px;
+    }
+
+    .product-info h3{
+        font-size: 18px;
+    }
+
+    .new-price{
+        font-size: 18px;
+    }
+
+}
+
+</style>
+
+<!-- =====================
+     FILTER SCRIPTS
+===================== -->
+
+<script>
+
+/* TOGGLE SUB FILTER */
+
+function toggleSubFilter(id){
+
+    let subFilters = document.querySelectorAll('.sub-filter-box');
+
+    subFilters.forEach(box => {
+
+        if(box.id === id){
+
+            box.style.display =
+                (box.style.display === 'flex') ? 'none' : 'flex';
+
+        } else {
+
+            box.style.display = 'none';
+
+        }
+
+    });
+
+}
+
+/* SHOW PRODUCTS BY CATEGORY */
+
+function showProducts(category, btn){
+
+    let cards   = document.querySelectorAll('.product-card');
+    let buttons = document.querySelectorAll('button');
+
+    /* Remove active class from all buttons */
+    buttons.forEach(button => {
+        button.classList.remove('active-btn');
+    });
+
+    /* Set active on clicked button */
+    if(btn){
+        btn.classList.add('active-btn');
+    }
+
+    /* Show / hide cards */
+    cards.forEach(card => {
+
+        if(category === 'all'){
+            card.style.display = 'block';
+        }
+        else if(card.classList.contains(category)){
+            card.style.display = 'block';
+        }
+        else{
+            card.style.display = 'none';
+        }
+
+    });
+
+}
+
+</script>
+
+{% endblock %}
